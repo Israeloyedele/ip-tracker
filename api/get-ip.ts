@@ -8,10 +8,13 @@ export async function GET(request: Request) {
         request.headers.get("x-forwarded-for")?.split(",")[0] ??
         "Unknown";
     // console.log(request.headers)
+
+
     const url: string = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ip}`;
+
     await axios.get(url)
         .then((res: AxiosResponse) => {
-            return Response.json({ data: res.data });
+            return Response.json(res.data)
     }).catch((error: AxiosError) => {
             return Response.json({ data: error.message });
         });
