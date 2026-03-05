@@ -12,7 +12,7 @@ function App() {
             .catch(err => console.log(err));
     },[])
     useEffect(() => {
-        axios.post("/api/get-ip-details", { ip: ip }).then(res=> console.log(res.data));
+        axios.post("/api/get-ip-details", { ip: ip }).then(res=> console.log(res));
     }, [ip]);
 
   return (
