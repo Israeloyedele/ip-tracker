@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 
@@ -10,9 +10,9 @@ function App() {
         axios.get("/api/get-ip")
             .then(res=> console.log(res.data.ip));
     },[])
-    useEffect(() => {
-        axios.post("/api/get-ip-details", { ip: ip }).then(res=> console.log(res.data));
-    }, [ip]);
+    // useEffect(() => {
+    //     axios.post("/api/get-ip-details", { ip: ip }).then(res=> console.log(res.data));
+    // }, [ip]);
 
   return (
     <>
