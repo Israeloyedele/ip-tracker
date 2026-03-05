@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 
 
 function App() {
 
-    const [ip, setIp] = useState("")
+    // const [ip, setIp] = useState("")
 
     useEffect(()=> {
         axios.get("/api/get-ip")
