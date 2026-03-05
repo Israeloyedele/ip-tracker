@@ -4,7 +4,8 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-// @ts-ignore
-  plugins: [  tailwindcss(), react() ]
-
+  plugins: [
+      tailwindcss(),
+      react()
+  ]
 })
