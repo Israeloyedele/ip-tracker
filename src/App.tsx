@@ -8,7 +8,7 @@ function App() {
 
     useEffect(()=> {
         axios.get("/api/get-ip")
-            .then(res=> console.log(res.data.ip))
+            .then(res=> console.log(res.data))
             .catch(err => console.log(err));
     },[])
 
