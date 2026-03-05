@@ -1,7 +1,12 @@
+import { useEffect } from "react";
+import axios from "axios";
 
 
 function App() {
-
+    useEffect(()=> {
+        axios.get("/api/get-ip")
+                .then(res=> console.log(res.data));
+    },[])
 
   return (
     <>
