@@ -1,4 +1,4 @@
-export default function getIp(request: Request) : Response {
+export function GET(request: Request) : Response {
     const ip =
         request.headers.get("x-forwarded-for")?.split(",")[0] ??
         "Unknown";
