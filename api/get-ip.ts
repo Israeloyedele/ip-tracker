@@ -1,7 +1,6 @@
-export function GET(request: Request) {
+export function getIp(request: Request) : Response {
     const ip =
         request.headers.get("x-forwarded-for")?.split(",")[0] ??
-        "unknown";
-
+        "Unknown";
     return Response.json({ ip });
 }
