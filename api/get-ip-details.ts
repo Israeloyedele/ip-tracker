@@ -13,8 +13,8 @@ export default async function getIpDetails(req: Request, res: Response): Promise
     const { ip } = req.body as unknown as Body;
     try {
         const url: string = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ip}`;
-        axios.get(url).then((response) => {console.log(response)})
-        return new Response(JSON.stringify({success: true, ...res}));
+        const response = await axios.get(url);
+        return new Response(JSON.stringify({response}));
     }
     catch(err){
         console.log(err);
