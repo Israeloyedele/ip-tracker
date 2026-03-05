@@ -4,7 +4,7 @@ import axios from "axios";
 
 function App() {
 
-    const [ip, setIp] = useState("66.232.126.119")
+    const [ip, setIp] = useState("")
 
     useEffect(()=> {
         axios.get("/api/get-ip")
@@ -13,7 +13,9 @@ function App() {
     },[])
 
     useEffect(() => {
-        axios.post("/api/get-ip-details", { ip: ip }).then(res=> console.log(res));
+        axios.post("/api/get-ip-details", { ip: ip })
+            .then(res=> console.log(res))
+            .catch(err => console.log(err));
     }, [ip]);
 
   return (
