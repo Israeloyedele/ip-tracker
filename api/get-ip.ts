@@ -16,6 +16,7 @@ export async function GET(request: Request) {
 
     console.log(res.data)
 
+    return Response.json(res.data);
 
 
 }
