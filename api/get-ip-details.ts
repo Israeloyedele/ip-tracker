@@ -12,8 +12,8 @@ export async function POST(req: Request): Promise<Response> {
     try {
         const url: string = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ip}`;
         const response = await axios.get(url);
-        console.log(response.data.data);
-        return Response.json(response.data.data);
+        console.log(response);
+        return Response.json(response);
     }
     catch(err){
         console.log(err);
