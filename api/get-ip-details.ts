@@ -1,4 +1,5 @@
 import axios from "axios";
+import {json} from "node:stream/consumers";
 
 const API_KEY: string = process.env.API_KEY;
 type Body = {
@@ -14,10 +15,10 @@ export default async function getIpDetails(req: Request, res: Response): Promise
     try {
         const url: string = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ip}`;
         const response = await axios.get(url);
-        return new Response(JSON.stringify({response}));
+        return Response.json(response);
     }
     catch(err){
         console.log(err);
-        return new Response(JSON.stringify({success: false}));
+        return Response.json({status: "error", error: err});
     }
 }
