@@ -5,7 +5,7 @@ type Body = {
     ip: string;
 }
 
-export default async function getIpDetails(req: Request, res: Response) {
+export default async function getIpDetails(req: Request, res: Response): Promise<Response> {
     if(req.method !== "POST") {
         return new Response(JSON.stringify({ error: "Method Not Allowed" }));
     }
@@ -14,7 +14,7 @@ export default async function getIpDetails(req: Request, res: Response) {
     try {
         const url: string = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ip}`;
         axios.get(url).then((response) => {console.log(response)})
-        return new Response(JSON.stringify({success: true}));
+        return new Response(JSON.stringify({success: true, ...res}));
     }
     catch(err){
         console.log(err);
