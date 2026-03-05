@@ -10,12 +10,15 @@ export async function POST(req: Request): Promise<Response> {
     }
     const { ip } = req.body as unknown as Body;
     try {
-        const url: string = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ip}`;
-        const response = await axios.get(url);
-        console.log(response);
-        return Response.json(response);
+        console.log(ip);
     }
     catch(err){
         console.log(err);
     }
 }
+
+
+// const url: string = `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ip}`;
+// const response = await axios.get(url);
+// console.log(response);
+// return Response.json(response);
