@@ -1,22 +1,22 @@
-import {useEffect, useState } from "react";
+import {useEffect } from "react";
 import axios from "axios";
 
 
 function App() {
 
-    const [ip, setIp] = useState("")
+    // const [ip, setIp] = useState("")
 
     useEffect(()=> {
         axios.get("/api/get-ip")
-            .then(res=> setIp(res.data.ip))
+            .then(res=> console.log(res.data.ip))
             .catch(err => console.log(err));
     },[])
 
-    useEffect(() => {
-        axios.post("/api/get-ip-details", { ip: ip })
-            .then(res=> console.log(res))
-            .catch(err => console.log(err));
-    }, [ip]);
+    // useEffect(() => {
+    //     axios.post("/api/get-ip-details", { ip: ip })
+    //         .then(res=> console.log(res))
+    //         .catch(err => console.log(err));
+    // }, [ip]);
 
   return (
     <>
