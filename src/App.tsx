@@ -8,15 +8,10 @@ function App() {
 
     useEffect(()=> {
         axios.get("/api/get-ip")
-            .then(res=> console.log(res))
+            .then(res=> console.log(res.data))
             .catch(err => console.log(err));
     },[])
 
-    // useEffect(() => {
-    //     axios.post("/api/get-ip-details", { ip: ip })
-    //         .then(res=> console.log(res))
-    //         .catch(err => console.log(err));
-    // }, [ip]);
 
   return (
     <>
