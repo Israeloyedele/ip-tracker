@@ -11,6 +11,7 @@ function App() {
             .then(res=> setIp(res.data.ip))
             .catch(err => console.log(err));
     },[])
+
     useEffect(() => {
         axios.post("/api/get-ip-details", { ip: ip }).then(res=> console.log(res.data));
     }, [ip]);

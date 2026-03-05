@@ -3,8 +3,9 @@ import axios from "axios";
 const API_KEY: string = process.env.API_KEY;
 type Body = { ip: string; }
 
-export async function GET(req: Request): Promise<Response> {
+export async function POST(req: Request): Promise<Response> {
     if(req.method !== "POST") {
+        console.log(req);
         return new Response(JSON.stringify({ error: "Method Not Allowed" }));
     }
     const { ip } = req.body as unknown as Body;
