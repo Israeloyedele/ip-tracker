@@ -18,7 +18,7 @@ export function Header(props:{ setSearchKey:  React.Dispatch<React.SetStateActio
             <div className="text-white text-3xl font-semibold p-5">IP Address Tracker</div>
                 <form onSubmit={handleSubmit} className="flex w-full justify-center">
                     <input type="text"
-                           className="bg-white py-3.75 px-5 focus:outline-none cursor-pointer border-none max-w-lg grow min-w-2xs rounded-l-2xl text-lg placeholder:text-[15px] placeholder:italic"
+                           className="bg-white py-3.75 px-5 focus:outline-none cursor-pointer border-none max-w-lg grow min-w-3xs rounded-l-2xl text-lg placeholder:text-[15px] placeholder:italic"
                            name="search"
                            placeholder="Search for any IP Address or domain"/>
                     <button
