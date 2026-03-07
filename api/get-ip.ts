@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// const API_KEY: string = "Key";
 const API_KEY: string = process.env.API_KEY;
 
 

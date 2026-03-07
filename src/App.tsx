@@ -32,7 +32,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className="font-[Rubik]">
         <Details setSearchKey={setSearchKey} setLoading={setLoading} setIpAddress={setIpAddress} data={data} error={error} loading={loading} />
         <Map location={data?.location} loading={loading} />
     </div>
