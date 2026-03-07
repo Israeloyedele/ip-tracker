@@ -9,7 +9,7 @@ function App() {
     const [data, setData] = useState<IPDetails | null>(null);
     const [error, setError] = useState<ErrorData | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
-    const [ipAddress, setIpAddress] = useState("102.93.9.16");
+    const [ipAddress, setIpAddress] = useState("");
     const [searchKey, setSearchKey] = useState(0);
 
 

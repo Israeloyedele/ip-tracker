@@ -1,15 +1,17 @@
-export function Header(props:{ setSearchKey, setLoading: React.Dispatch<React.SetStateAction<boolean>>, setIpAddress: React.Dispatch<React.SetStateAction<string>>}) {
+
+export function Header(props:{ setSearchKey: React.Dispatch<React.SetStateAction<number>>, setLoading: React.Dispatch<React.SetStateAction<boolean>>, setIpAddress: React.Dispatch<React.SetStateAction<string>>}) {
 
     const { setSearchKey, setLoading, setIpAddress } = props;
 
 
-    function handleSubmit(e) {
+    //eslint-disable-next-line @typescript-eslint/no-explicit-any
+    function handleSubmit(e: any) {
         e.preventDefault();
         const form = e.currentTarget;
         const input = form.elements.namedItem("search");
-        setIpAddress(input.value);
-        setLoading(true);
+        setIpAddress(input?.value);
         setSearchKey(c => c+1);
+        setLoading(true)
     }
     return (
         <div>

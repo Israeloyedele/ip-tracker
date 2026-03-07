@@ -6,7 +6,7 @@ export function Map(props:{ location: Location | undefined; loading: boolean }) 
 
     return(
         <>
-
+            {loading ? "": location?.country}
         </>
     )
 }
